@@ -21,8 +21,10 @@ public class Singleton {
     private Map<String, Korisnik> korisnici;
     private Map<Long, Predstava> predstave;
     private Map<Long, Karta> karte;
+    private Map<Long, Predstava> prikazanePredstave;
 
     private Korisnik ulogovanKorisnik;
+    private Predstava detaljnoPrikazanaPredstava;
 
 
     private Singleton() {
@@ -79,5 +81,21 @@ public class Singleton {
 
     public void setPredstavaKontroler(PredstavaKontroler predstavaKontroler) {
         this.predstavaKontroler = predstavaKontroler;
+    }
+    
+    public Map<Long, Predstava> getPrikazanePredstave() {
+        return prikazanePredstave;
+    }
+
+    public void setPrikazanePredstave(Map<Long, Predstava> prikazanePredstave) {
+        this.prikazanePredstave = prikazanePredstave;
+    }
+
+    public Predstava getDetaljnoPrikazanaPredstava() {
+        return detaljnoPrikazanaPredstava;
+    }
+
+    public void setDetaljnoPrikazanaPredstava(Predstava detaljnoPrikazanaPredstava) {
+        this.detaljnoPrikazanaPredstava = detaljnoPrikazanaPredstava;
     }
 }
