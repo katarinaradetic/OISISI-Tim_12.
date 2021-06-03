@@ -105,7 +105,7 @@ public class ProzorRegistracija extends JPanel {
                 new Insets(5, 5, 5,5 ), 0, 0));
     }
 
-    private Korisnik validacija() {
+   private Korisnik validacija() {
         String korisnickiIme = tfKorisnickoIme.getText();
         String lozinka = new String(tfLozinka.getPassword());
         String ime =  tfIme.getText().trim();
@@ -122,8 +122,17 @@ public class ProzorRegistracija extends JPanel {
             JOptionPane.showMessageDialog(null, "Ime je obavezno!",
                     Singleton.APP_NAME, JOptionPane.WARNING_MESSAGE);
             return null;
+        } else if (!ime.matches("[a-zA-ZžŽćĆčČđĐšŠ]")) {
+            JOptionPane.showMessageDialog(null, "Ime mora da bude sačinjeno samo od slova!",
+                    Singleton.APP_NAME, JOptionPane.WARNING_MESSAGE);
+            return null;
         } else if(prezime.equals("")) {
             JOptionPane.showMessageDialog(null, "Prezime je obavezno!",
+                    Singleton.APP_NAME, JOptionPane.WARNING_MESSAGE);
+            return null;
+        } else if (!prezime.matches("[a-zA-ZžŽćĆčČđĐšŠ]")) {
+            JOptionPane.showMessageDialog(null,
+                    "Prezime mora da bude sačinjeno samo od slova!",
                     Singleton.APP_NAME, JOptionPane.WARNING_MESSAGE);
             return null;
         }
